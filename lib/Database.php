@@ -1,7 +1,7 @@
 <?php
 
 $db = new SQLite3(
-    "data/wordsmith.sqlite",
+    dirname(__DIR__) . "/data/wordsmith.sqlite",
     SQLITE3_OPEN_CREATE | SQLITE3_OPEN_READWRITE
 );
 

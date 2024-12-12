@@ -1,10 +1,20 @@
+<?php
+include "../lib/Utilities.php";
 
-<div id="container">
-  <form method="post" action="index.php">
-      <h1>Sign in</h1>
-      <input type="text" name="email_username" placeholder="E-mail or username" required><br>
-      <input type="password" name="password" placeholder="Password" required><br>
-      <input type="button" value="Sign in"><br>
-      <p>Don't have an account? <a href="/signup/">Sign up</a><p>
-  </form>
-</div>
+if (isset($_POST["submit"])) {
+    $user_data = [
+        "email_username" => $_POST["email_username"],
+        "password" => sanitize_field($_POST["password"]),
+    ];
+    signin(
+        $user_data,
+        new SQLite3(
+            "../data/wordsmith.sqlite",
+            SQLITE3_OPEN_CREATE | SQLITE3_OPEN_READWRITE
+        )
+    );
+} else {
+    include "../templates/signin-form.php";
+}
+
+?>

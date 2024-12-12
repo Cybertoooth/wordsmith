@@ -1,5 +1,6 @@
 <?php
 require __DIR__ . "/authenticate.php";
-include "lib/Database.php";
-include "lib/User.php";
+require __DIR__ . "/lib/User.php";
 ?>
+
+<h1>Hello</h1>
