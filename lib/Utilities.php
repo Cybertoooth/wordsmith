@@ -1,8 +1,5 @@
 <?php
 
-#include "../lib/User.php";
-#include "../lib/Database.php";
-
 require __DIR__ . "/User.php";
 require __DIR__ . "/Database.php";
 
