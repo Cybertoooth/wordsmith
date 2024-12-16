@@ -12,9 +12,11 @@ require __DIR__ . "/includes/header.php";
   </menu>
 </header>
 <div id="search-container">
-  <form method="post">
-      <input type="text" name="search" placeholder="Search" id="search" required>
+  <form>
+      <input type="text" name="q" placeholder="Search" id="search" required>
   </form>
+  <div id="search-result"></div>
 </div>
 </div>
+<script src="js/main.js"></script>
 <?php require __DIR__ . "/includes/footer.php"; ?>
